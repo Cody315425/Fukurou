@@ -9,4 +9,4 @@ mvn install:install-file -Dfile="/path/to/your/bluej/lib/bluej.jar" -DgroupId=or
 ```
 Note: 
 - bluej.jar is located in the lib folder of your BlueJ install.
-- If you are running this command in a powershell terminal you will need to surround both `-DgroupId=org.bluej` and `-Dversion=6.0.1` in double quotes like so `"-DgroupId=org.bluej"`
+- If you are running this command in a powershell terminal you will need to surround both `-DgroupId=org.bluej` and `-Dversion=1.0` in double quotes like so `"-DgroupId=org.bluej"`
