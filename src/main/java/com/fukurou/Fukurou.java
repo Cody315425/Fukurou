@@ -14,6 +14,7 @@ import bluej.extensions2.event.PackageListener;
  */
 public class Fukurou extends Extension implements PackageListener
 {
+    public CompileHandler compileHandler = new CompileHandler();
     /*
      * When this method is called, the extension may start its work.
      */
@@ -21,6 +22,7 @@ public class Fukurou extends Extension implements PackageListener
     {
         // Listen for BlueJ events at the "package" level
         bluej.addPackageListener(this);
+        bluej.addCompileListener(compileHandler);
     }
 
     /*
@@ -62,7 +64,7 @@ public class Fukurou extends Extension implements PackageListener
      */
     public String getVersion ()
     { 
-        return ("1.2.3"); 
+        return ("1.0.0"); 
     }
 
     /*
@@ -70,17 +72,17 @@ public class Fukurou extends Extension implements PackageListener
      */
     public String getName ()
     { 
-        return ("Simple Extension"); 
+        return ("Fukurou"); 
     }
 
     public void terminate()
     {
-        System.out.println ("Simple extension terminates");
+        System.out.println ("Fukurou terminates");
     }
                
     public String getDescription ()
     {
-        return ("A simple extension");
+        return ("Collect usage metrics from users.");
     }
 
     /*
@@ -92,12 +94,12 @@ public class Fukurou extends Extension implements PackageListener
     {
         try
         {
-            return new URL("http://www.bluej.org/doc/writingextensions.html");
+            return new URL("https://github.com/The-Objectors/Fukurou");
         }
         catch ( Exception e )
         {
             // The link is either dead or otherwise unreachable
-            System.out.println ("Simple extension: getURL: Exception="+e.getMessage());
+            System.out.println ("Fukurou: getURL: Exception="+e.getMessage());
             return null;
         }
     }
